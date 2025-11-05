@@ -6,7 +6,66 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+    /*zadanie 1
+    int liczby[10];
+    cout << "Wprowadz 10 liczb calkowitych" << endl;
+
+    for (int i = 0; i < sizeof(liczby)/sizeof(liczby[0]); i++) {
+        cin >> liczby[i];
+    }
+
+    cout << "Liczby w odwroconej kolejnosci: " << endl;
+
+    for (int i = sizeof(liczby)/sizeof(liczby[0]) - 1; i >= 0; i--) {
+        cout << liczby[i] << endl;
+    }*/
+
+    /*zadanie 2
+    int n;
+
+    cout << "Wprowadz ilosc kolejnych liczb ciagu Fibonacciego: ";
+    cin >> n;
+    int* tab = new int[n+2];
+    tab[0] = 0;
+    tab[1] = 1;
+
+    cout << "Kolejne liczby ciagu Fibonacciego: " << endl;
+
+    for (int i = 2; i < n+2; i++) {
+        tab[i] = tab[i - 1] + tab[i - 2];
+        cout << tab[i] << endl;
+    }*/
+
+    int tab[10];
+    float srednia=0;
+    srand(time(0));
+    for (int i = 0; i < 10; i++) {
+        tab[i] = rand();
+        cout << tab[i] << endl;
+        srednia += tab[i];
+        
+    }
+
+    int min=tab[0], max=tab[0];
+    
+    for (int i = 0; i < 10; i++) {
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+    }
+
+    srednia /= 10;
+
+    int licznik = 0;
+
+    for (int i = 0; i < 10; i++) {
+        if (tab[i] < srednia) {
+            licznik++;
+        }
+    }
+
+    cout << "Ilosc elementow mniejszych od " << srednia << ": " << licznik << endl;
+    cout << "Najmniejsza element w tablicy: " << min << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
