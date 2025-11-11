@@ -36,6 +36,8 @@ int main()
         cout << tab[i] << endl;
     }*/
 
+
+    /*zadanie 3
     int tab[10];
     float srednia=0;
     srand(time(0));
@@ -43,11 +45,11 @@ int main()
         tab[i] = rand();
         cout << tab[i] << endl;
         srednia += tab[i];
-        
+
     }
 
     int min=tab[0], max=tab[0];
-    
+
     for (int i = 0; i < 10; i++) {
         if (tab[i] < min) {
             min = tab[i];
@@ -65,7 +67,30 @@ int main()
     }
 
     cout << "Ilosc elementow mniejszych od " << srednia << ": " << licznik << endl;
-    cout << "Najmniejsza element w tablicy: " << min << endl;
+    cout << "Najmniejsza element w tablicy: " << min << endl; */
+
+    int x, y;
+    cout << "Podaj wymiary macierzy [x][y]: " << endl;
+    cin >> x >> y;
+    float** macierz = new float *[x];
+    for (int i = 0; i < x; i++){
+        macierz[i] = new float[y];
+    }
+
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            cout << "Wprowadz liczbe dla macierz[" << i << "][" << j << "]: ";
+            cin >> macierz[i][j];
+        }
+    }
+    cout << endl;
+
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            cout << macierz[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
